@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- Cấu hình chạy parallel 2 class cùng một lúc -->
+<suite name="Suite_Lab8" parallel="classes" thread-count="2">
+
+    <!-- Bạn thay đổi chữ "smoke" thành "regression" ở dưới để đổi nhóm test -->
+    <test name="Test_Nhom_Cua_Ban">
+        <groups>
+            <run>
+                <!-- Đổi thành "regression" nếu muốn chạy tất cả -->
+                <include name="smoke"/> 
+            </run>
+        </groups>
+        
+        <classes>
+            <class name="dtm.tests.LoginTest"/>
+            <class name="dtm.tests.CartTest"/>
+            <class name="dtm.tests.CheckoutTest"/>
+        </classes>
+    </test>
+</suite>
